@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="shopping-cart">
+        <div class="title">Корзина</div>
+        <div class="item">
+            <div class="image">
+                <img class="picture" src="/assets/images/carrier.webp" alt="переноска" />
+            </div>
+
+            <div class="description">
+                <span>Переноска KIM 60 на колесах для кошек и собак мелкого размера</span>
+                <span>Вес: 2 кг 740 г</span>
+                <span>Цвет: В ассортименте</span>
+                <span>Кол-во: 1</span>
+            </div>
+            <input id="price_one" type="text" disabled value="4995"></input>
+            <div class="currency">руб.</div>
+        </div>
+
+        <div class="item">
+            <div class="image">
+                <img class="picture" src="/assets/images/sweater.webp" alt="свитер"/>
+            </div>
+
+            <div class="description">
+                <span>Водолазка для кошек утепленная Сканди узор</span>
+                <span>Размер: M</span>
+                <span>Цвет: Белый/красный</span>
+                <span>Кол-во: 1</span>
+            </div>
+            <input id="price_two" type="text" disabled value="439"></input>
+            <div class="currency">руб.</div>
+        </div>
+
+        <div class="item">
+            <div class="image">
+                <img class="picture" src="/assets/images/toy.webp" alt="игрушка" />
+            </div>
+
+            <div class="description">
+                <span>Игрушка для кошек Дразнилка Кольцо с перьями 40 см</span>
+                <span>Вес: 50 г</span>
+                <span>Цвет: В ассортименте</span>
+                <span>Кол-во: 1</span>
+            </div>
+            <input id="price_three" type="text" disabled value="229"></input>
+            <div class="currency">руб.</div>
+        </div>
+
+        <div class="item">
+            <div class="image">
+                <img class="picture" src="/assets/images/bowl.webp" alt="миска" />
+            </div>
+
+            <div class="description">
+                <span>Миска для кошек блюдце овал с ушками 14,8см белая керамика</span>
+                <span>Объем: 150мл</span>
+                <span>Цвет: Белый</span>
+                <span>Кол-во: 1</span>
+            </div>
+            <input id="price_four" type="text" disabled value="429"></input>
+            <div class="currency">руб.</div>
+        </div>
+    </div>
+    <div class="counter">
+        <button onClick="applyDiscount" class="discount">Использовать купон на 20%</button>
+        <div class="total">Итого: 
+            <br>
+            <input id="sum" type="text" disabled value="0"></input> руб.</div>
+    </div>
+    <script>
+        function sum () {
+            let one =parseInt(document.getElementById('price_one').value);
+            let two =parseInt(document.getElementById('price_two').value);
+            let three =parseInt(document.getElementById('price_three').value);
+            let four =parseInt(document.getElementById('price_four').value);
+            document.getElementById('sum').setAttribute('value',one+two+three+four)
+        }
+        sum();
+        function applyDiscount () {
+            let sum =document.getElementById('sum');
+            sum.setAttribute('value', parseInt(sum.value) * 0.8)
+        }
+    </script>
+</body>
+</html>
